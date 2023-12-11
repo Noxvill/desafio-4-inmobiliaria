@@ -1,6 +1,6 @@
-// arreglo con propiedades en alquiler
+// arreglo con propiedades en venta
 
-const propiedades_alquiler = [
+const propiedades_alq = [
   {
     nombre: "Apartamento en el centro de la ciudad",
     src: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50fGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=6",
@@ -48,3 +48,95 @@ const propiedades_alquiler = [
     pets: true,
   },
 ];
+
+// Función para renderizar las propiedades
+
+const renderalqproperties = () => {
+  const divalq = document.getElementById("venta");
+
+  propiedades_alq.forEach((propiedades_alq) => {
+    if (propiedades_alq.smoke) {
+      smk =
+        "<p class='text-success'>" +
+        "<i class='fas fa-smoking'>" +
+        "</i>" +
+        " " +
+        "Permitido Fumar" +
+        "</p>";
+    } else {
+      smk =
+        "<p class='text-danger'>" +
+        "<i class='fas fa-smoking-ban'>" +
+        "</i>" +
+        " " +
+        "No Permitido Fumar" +
+        "</p>";
+    }
+
+    if (propiedades_alq.pets) {
+      pts =
+        "<p class='text-success'>" +
+        "<i class='fas fa-paw'>" +
+        "</i>" +
+        " " +
+        "Se Permiten mascotas" +
+        "</p>";
+    } else {
+      pts =
+        "<p class='text-danger'>" +
+        "<i class='fa-solid fa-ban'>" +
+        "</i>" +
+        " " +
+        "No se Permiten mascotas" +
+        "</p>";
+    }
+
+    divalq.innerHTML +=
+      "<div class='row'>" +
+      "<div class='col-md-4 mb-4'>" +
+      "<div class='card'>" +
+      "<img src=" +
+      propiedades_alq.src +
+      " class='card-img-top' alt='Imagen del departamento'/>" +
+      "<div class='card-body'>" +
+      "<h5 class='card-title'>" +
+      propiedades_alqnombre +
+      "</h5>" +
+      "<p class='card-text'>" +
+      propiedades_alq.descripcion +
+      "</p>" +
+      "<i class='fas fa-map-marker-alt'>" +
+      "</i>" +
+      "<p>" +
+      propiedades_alq.ubicacion +
+      "</p>" +
+      "<p>" +
+      "<i class='fas fa-bed'>" +
+      "</i>" +
+      " " +
+      propiedades_alq.habitaciones +
+      " " +
+      "habitaciones" +
+      " " +
+      "|" +
+      " " +
+      "<i class='fas fa-bath'>" +
+      "</i>" +
+      " " +
+      propiedades_alq.baños +
+      " " +
+      "baños" +
+      "</p>" +
+      "<p>" +
+      "<i class='fas fa-dollar-sign'>" +
+      "</i>" +
+      propiedades_alq.costo +
+      "</p>" +
+      smk +
+      pts +
+      "</div>" +
+      "</div>";
+  });
+};
+
+renderalqproperties();
