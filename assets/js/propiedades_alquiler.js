@@ -1,6 +1,6 @@
 // arreglo con propiedades en venta
 
-const propiedades_alq = [
+const propiedades_alq= [
   {
     nombre: "Apartamento en el centro de la ciudad",
     src: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50fGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=6",
@@ -8,7 +8,7 @@ const propiedades_alq = [
     ubicacion: "123 Main Street, Anytown, CA 91234",
     habitaciones: 2,
     baños: 2,
-    costo: 2.000,
+    costo: 2000,
     smoke: false,
     pets: true,
   },
@@ -20,7 +20,7 @@ const propiedades_alq = [
     ubicacion: "456 Ocean Avenue, Seaside Town, CA 56789",
     habitaciones: 3,
     baños: 3,
-    costo: 2.500,
+    costo: 2500,
     smoke: true,
     pets: true,
   },
@@ -32,18 +32,18 @@ const propiedades_alq = [
     ubicacion: "123 Main Street, Anytown, CA 91234",
     habitaciones: 2,
     baños: 2,
-    costo: 2.200,
+    costo: 2200,
     smoke: false,
     pets: false,
   },
   {
     nombre: "Casona patronal en la séptima región",
-    src: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prohabiter.cl%2Fpropiedad%2Fgran-casona-patronal-en-pleno-corazon-de-romeral&psig=AOvVaw145JFZQVsxnjuXrJNfAcuh&ust=1702338139448000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLCyyfWFhoMDFQAAAAAdAAAAABAD",
+    src: "https://www.monumentos.gob.cl/sites/default/files/styles/slide_monumentos/public/image-monumentos/mh_00266_2017_fp_001.jpg",
     descripcion: "Amplia casona patronal ubicada cerca de los valles de la séptima región",
     ubicacion: "Cerro Fátima, km 24, Talca",
     habitaciones: 6,
     baños: 4,
-    costo: 8.000,
+    costo: 8000,
     smoke: true,
     pets: true,
   },
@@ -52,91 +52,94 @@ const propiedades_alq = [
 // Función para renderizar las propiedades
 
 const renderalqproperties = () => {
-  const divalq = document.getElementById("venta");
+const divAlq = document.getElementById("venta");
 
-  propiedades_alq.forEach((propiedades_alq) => {
-    if (propiedades_alq.smoke) {
-      smk =
-        "<p class='text-success'>" +
-        "<i class='fas fa-smoking'>" +
-        "</i>" +
-        " " +
-        "Permitido Fumar" +
-        "</p>";
-    } else {
-      smk =
-        "<p class='text-danger'>" +
-        "<i class='fas fa-smoking-ban'>" +
-        "</i>" +
-        " " +
-        "No Permitido Fumar" +
-        "</p>";
-    }
+propiedades_alq.forEach((propiedades_alq) => {
 
-    if (propiedades_alq.pets) {
-      pts =
-        "<p class='text-success'>" +
-        "<i class='fas fa-paw'>" +
-        "</i>" +
-        " " +
-        "Se Permiten mascotas" +
-        "</p>";
-    } else {
-      pts =
-        "<p class='text-danger'>" +
-        "<i class='fa-solid fa-ban'>" +
-        "</i>" +
-        " " +
-        "No se Permiten mascotas" +
-        "</p>";
-    }
+  if (propiedades_alq.smoke) {
+    smk =
+      "<p class='text-success'>" +
+      "<i class='fas fa-smoking'>" +
+      "</i>" +
+      " " +
+      "Permitido Fumar" +
+      "</p>";
+  } else {
+    smk =
+      "<p class='text-danger'>" +
+      "<i class='fas fa-smoking-ban'>" +
+      "</i>" +
+      " " +
+      "No Permitido Fumar" +
+      "</p>";
+  }
 
-    divalq.innerHTML +=
-      "<div class='row'>" +
-      "<div class='col-md-4 mb-4'>" +
-      "<div class='card'>" +
-      "<img src=" +
-      propiedades_alq.src +
-      " class='card-img-top' alt='Imagen del departamento'/>" +
-      "<div class='card-body'>" +
-      "<h5 class='card-title'>" +
-      propiedades_alqnombre +
-      "</h5>" +
-      "<p class='card-text'>" +
-      propiedades_alq.descripcion +
-      "</p>" +
-      "<i class='fas fa-map-marker-alt'>" +
-      "</i>" +
-      "<p>" +
-      propiedades_alq.ubicacion +
-      "</p>" +
-      "<p>" +
-      "<i class='fas fa-bed'>" +
+  if (propiedades_alq.pets) {
+    pts =
+      "<p class='text-success'>" +
+      "<i class='fas fa-paw'>" +
       "</i>" +
       " " +
-      propiedades_alq.habitaciones +
-      " " +
-      "habitaciones" +
-      " " +
-      "|" +
-      " " +
-      "<i class='fas fa-bath'>" +
+      "Se Permiten mascotas" +
+      "</p>";
+  } else {
+    pts =
+      "<p class='text-danger'>" +
+      "<i class='fa-solid fa-ban'>" +
       "</i>" +
       " " +
-      propiedades_alq.baños +
-      " " +
-      "baños" +
-      "</p>" +
-      "<p>" +
-      "<i class='fas fa-dollar-sign'>" +
-      "</i>" +
-      propiedades_alq.costo +
-      "</p>" +
-      smk +
-      pts +
-      "</div>" +
-      "</div>";
+      "No se Permiten mascotas" +
+      "</p>";
+  }
+
+  divAlq.innerHTML +=
+  "<div class='row'>" +
+  "<div class='col-md-4 mb-4'>" +
+  "<div class='card'>" +
+  "<img src=" +
+  propiedades_alq.src +
+  " class='card-img-top' alt='Imagen del departamento'/>" +
+  "<div class='card-body'>" +
+  "<h5 class='card-title'>" +
+  propiedades_alq.nombre +
+  "</h5>" +
+  "<p class='card-text'>"+
+  propiedades_alq.descripcion +
+  "</p>" +
+  "<i class='fas fa-map-marker-alt'>" +
+  "</i>" +
+  "<p>" +
+  propiedades_alq.ubicacion+
+  "</p>" +
+  "<p>" +
+  "<i class='fas fa-bed'>" +
+  "</i>" +
+  " " +
+  propiedades_alq.habitaciones +
+  " " +
+  "habitaciones" +
+  " " +
+  "|" +
+  " " +
+  "<i class='fas fa-bath'>" +
+  "</i>" +
+  " " +
+  propiedades_alq.baños +
+  " " +
+  "baños" +
+  "</p>" +
+  "<p>" +
+  "<i class='fas fa-dollar-sign'>" +
+  "</i>" +
+  propiedades_alq.costo +
+  "</p>" +
+  smk +
+  pts +
+  "</div>" +
+  "</div>";
+
+      
   });
 };
 
-renderalqproperties();
+renderalqproperties()
